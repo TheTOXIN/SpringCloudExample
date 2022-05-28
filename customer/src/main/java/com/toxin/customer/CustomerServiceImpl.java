@@ -1,11 +1,13 @@
 package com.toxin.customer;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-public record CustomerServiceImpl(
-        CustomerRepository customerRepository
-) implements CustomerService {
+@AllArgsConstructor
+public class CustomerServiceImpl implements CustomerService {
+
+    private final CustomerRepository customerRepository;
 
     public void register(CustomerRegistrationRequest request) {
          Customer customer = Customer.builder()
