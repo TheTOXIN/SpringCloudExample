@@ -1,4 +1,8 @@
 package com.toxin.clients.notification;
 
-public class NotificationRequest {
+public record NotificationRequest(
+        Integer toCustomerId,
+        String toCustomerName,
+        String message
+) {
 }

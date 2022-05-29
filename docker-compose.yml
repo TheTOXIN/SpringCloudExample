@@ -1,5 +1,13 @@
 services:
 
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - data:/data
+
   mongodb:
     image: mongo
     container_name: mongodb
@@ -59,7 +67,8 @@ networks:
     name: mogodb_network
 
 volumes:
-  data: {}
+  data: { }
+  redis:
   mongodb:
   mongo_express:
   postgres:
