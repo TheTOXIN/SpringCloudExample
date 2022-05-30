@@ -152,6 +152,7 @@ services:
       - eureka-server
       - postgres
       - rabbitmq
+      - redis
 
 networks:
   postgres:
@@ -159,7 +160,13 @@ networks:
   spring:
     driver: bridge
   mongodb:
+    driver: bridge
     name: mogodb_network
+  rabbitmq:
+    driver: bridge
+  redis:
+    driver: bridge
+
 
 volumes:
   data: { }
