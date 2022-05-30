@@ -1,4 +1,5 @@
 FROM openjdk:17-alpine
-MAINTAINER toxin
-COPY target/*.jar /app.jar
-CMD ["java", "-jar", "/app.jar"]
+MAINTAINER thet0xin
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
